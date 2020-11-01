@@ -33,7 +33,7 @@ the binary numerical system such that two successive values differ in only one b
 For example, the representation of the decimal value "1" in binary would normally be "001" and "2" would be "010". 
 In Gray code, these values are represented as "001" and "011". That way, incrementing a value from 1 to 2 requires only one bit to change, instead of two.
 
-In what follow, we will focus on 4-QAM modulation with Gray coding. In this case, the constellation diagram for Gray-coded 4-QAM is shown in figure bellow.
+In what follow, we will focus on 4-QAM (or Quadrature phase shift keying QPSK) modulation with Gray coding. In this case, the constellation diagram for Gray-coded 4-QAM is shown in figure bellow.
 
  ![](Figures/QPSK_Gray_Coded.png)
 
@@ -46,13 +46,13 @@ In what follow, we will focus on 4-QAM modulation with Gray coding. In this case
  
  The proposed technical levels are:
 
-1. 4-QAM modulation VHDL & testbench implementation
+1. QPSK modulation VHDL & testbench implementation
 2. Evaluate the behavioral simulation
 3. Synthesis and hardware implementation of the project
 
 
 
-### 1. 4-QAM modulation VHDL & testbench implementation
+### 1. QPSK modulation VHDL & testbench implementation
 
 In the VHDL implementation, we use signed fixed-point numbers with 2 bits for the integer part and 0 fractional bits. With this choice, it is possible
 to represent form -2 to +1. Also, bit to symbol mapping use this trick for 4-QAM modulation: 
@@ -94,34 +94,38 @@ We run the behavioral simulation using Vivado HLS software. The resulted output 
 
  ![](Figures/simu.jpg)
 
-The output from the simulation contains the expectede values of 4-QAM modulations.
+The output from the simulation contains the expected values of 4-QAM modulations.
 
 ### 3. Synthesis and hardware implementation of the project
 
 The hardware implementation of the design was carried out using Vivado software by Xilinx. The targed will be the Zynq borad.
 The typical flow of hardware implementation implies 
 
-1. RTL analysis
-2. Synthesis and finally the implementation
+#### 3.1. RTL analysis
+#### 3.2. Synthesis and finally the implementation
 
-1. RTL view
+#### 3.1. RTL view
 
 Figure below shows the RTL view of the 4-QAM modulator.
  ![](Figures/rtl.jpg)
 
 
-2. Power report
+#### 3.1. Synthesis and finally the implementation
+   1. Power 
 The on-chip power are basically from the I/O peripherials (99%) and in a second part from the inner signals (1%).
  
 ![](Figures/power.jpg)
 
-2.4- Utilization report
+   2. Utilization report
 The used resource us the I/O as the circuit has 2 bits input and a 2 bits output.
 
  ![](Figures/utilization.jpg)
 
- 
-Conclusions
+   3. Device 
+  The pink area shows the used resources of a FPGA in device view.
+![](Figures/device.jpg)
+
+ ## Conclusions
 
 The proposed project meets the 4-QAM modulation process requirements.
 Further Higher modulation format could also be implemented.
