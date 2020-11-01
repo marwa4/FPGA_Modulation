@@ -110,7 +110,7 @@ Figure below shows the RTL view of the 4-QAM modulator.
  ![](Figures/rtl.jpg)
 
 
-#### 3.1. Synthesis and finally the implementation
+#### 3.2. Synthesis and finally the implementation
    1. Power 
 The on-chip power are basically from the I/O peripherials (99%) and in a second part from the inner signals (1%).
  
