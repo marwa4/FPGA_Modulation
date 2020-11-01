@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../sym_mapping.srcs/sources_1/imports/QAMModulation/qam4_mapper.vhd" \
+"../../../../sym_mapping.srcs/sim_1/imports/QAMModulation/sym_mapping_loopback_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\git\VHDL_projects\QAMModulation\sym_mapping\sym_mapping.runs\impl_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permission denied
